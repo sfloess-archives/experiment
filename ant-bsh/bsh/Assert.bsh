@@ -1,5 +1,11 @@
-AssertNotNull(String str) {
-    if (null == str) {
-        throw new IllegalArgumentException("STR [" + str + "]");
+Assert() {
+    notNull(String str) {
+        print("Checking [" + str + "]");
+
+        if (null == str) {
+            throw new IllegalArgumentException("STR [" + str + "]");
+        }
     }
+
+    return this;
 }

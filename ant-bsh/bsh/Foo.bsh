@@ -1,8 +1,11 @@
-Foo(String name) {
-    importCommands("bsh");
-    print("Checking [" + name + "]");
-    AssertNotNull(name);
-    for (URL u : getClassPath()) {
-        print(" ---> " + u);
+Foo() {
+    assert = Assert();
+
+    void helloWorld() {
+        print("HELLO WORLD");
+
+        assert.notNull("WOW");
     }
+
+    return this;
 }

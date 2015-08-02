@@ -2,7 +2,6 @@
     <dirname property="root.HOME" file="${ant.file.ant-bsh}"/>
 
     <property name="bsh.HOME" value="${root.HOME}/bsh"/>
-
     <property name="lib.HOME" value="${root.HOME}/lib"/>
 
     <path id="script.PATH">
@@ -10,13 +9,23 @@
         <pathelement path="${bsh.HOME}"/>
     </path>
 
+    <echo>
+        root.HOME  [${root.HOME}]
+        bsh.HOME   [${bsh.HOME}]
+        lib.HOME   [${lib.HOME}]
+    </echo>
+
     <scriptdef name="testBsh" language="beanshell" description="Testing beanshel">
         <classpath refid="script.PATH"/>
 
         <![CDATA[
 
+            importCommands(".");
+
             printBanner();
-            Foo("Scot");
+            f = Foo();
+
+            f.helloWorld();
 
         ]]>
     </scriptdef>

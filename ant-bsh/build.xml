@@ -1,0 +1,28 @@
+<project name="ant-bsh" basedir=".">
+    <dirname property="root.HOME" file="${ant.file.ant-bsh}"/>
+
+    <property name="bsh.HOME" value="${root.HOME}/bsh"/>
+
+    <property name="lib.HOME" value="${root.HOME}/lib"/>
+
+    <path id="script.PATH">
+        <fileset dir="${lib.HOME}" includes="*.jar"/>
+        <pathelement path="${bsh.HOME}"/>
+    </path>
+
+    <scriptdef name="testBsh" language="beanshell" description="Testing beanshel">
+        <classpath refid="script.PATH"/>
+
+        <![CDATA[
+
+            printBanner();
+            Foo("Scot");
+
+        ]]>
+    </scriptdef>
+
+    <testBsh/>
+</project>
+
+
+

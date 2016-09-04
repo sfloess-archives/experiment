@@ -1,0 +1,4 @@
+---
+
+- name: Role 1
+  shell: /usr/bin/echo "I am in Role 1"

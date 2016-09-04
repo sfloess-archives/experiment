@@ -1,0 +1,11 @@
+---
+
+- name: provision a host with docker
+  hosts: all
+
+  roles:
+    - role1
+    - role2
+    - role3
+    - role3/role3a
+    - role3/role3b
